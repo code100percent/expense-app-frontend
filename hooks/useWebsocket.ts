@@ -1,12 +1,12 @@
 "use client"
 
 import { useEffect, useRef } from "react"
-
+import {WS_URL} from "../lib/config"
 export function useWebSocket(onMessage: (data: any) => void) {
   const socketRef = useRef<WebSocket | null>(null)
 
   useEffect(() => {
-    const socket = new WebSocket("ws://localhost:5000")
+    const socket = new WebSocket(WS_URL)
 
     socket.onopen = () => {
       console.log("WebSocket connected")

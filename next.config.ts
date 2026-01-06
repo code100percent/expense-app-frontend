@@ -1,9 +1,18 @@
 import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
-  /* config options here */
   images: {
     domains: ["res.cloudinary.com"],
+  },
+
+  async rewrites() {
+    return [
+      {
+        source: "/api/:path*",
+        destination:
+          "https://expense-app-backend-production.up.railway.app/api/:path*",
+      },
+    ];
   },
 };
 
