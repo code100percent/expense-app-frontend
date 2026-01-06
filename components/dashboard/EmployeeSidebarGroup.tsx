@@ -17,7 +17,7 @@ export default function EmployeeSidebarGroup(){
       try {
         const res = await fetchAPI(`${API_BASE}/api/expenses`)
         const data = await res.json()
-        console.log(data)
+        // console.log(data)
         
         // The API returns { historyRequests, pendingRequests }
         // For employees, pendingRequests contains expenses that need attention

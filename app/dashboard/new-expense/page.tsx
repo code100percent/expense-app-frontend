@@ -241,7 +241,7 @@ export default function NewExpensePage() {
       }
 
       const data = await res.json()
-      console.log("OCR data:", data)
+      // console.log("OCR data:", data)
 
       // expected backend response:
       // { amount: number, date: "YYYY-MM-DD" }
@@ -295,7 +295,7 @@ export default function NewExpensePage() {
       formData.append("receiptAmount", Number(receiptAmount).toString())
       formData.append("receipt", file)
 
-      const res = await fetch("http://localhost:5000/api/expenses", {
+      const res = await fetch(`${API_BASE}/api/expenses`, {
         method: "POST",
         body: formData,
         credentials: "include",
@@ -306,7 +306,7 @@ export default function NewExpensePage() {
       }
 
       const data = await res.json()
-      console.log("Expense created:", data)
+      // console.log("Expense created:", data)
 
       alert("Expense submitted successfully")
 

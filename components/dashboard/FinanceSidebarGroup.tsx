@@ -18,7 +18,7 @@ export default function FinanceSidebarGroup(){
       try {
         const res = await fetchAPI(`${API_BASE}/api/expenses`)
         const data = await res.json()
-        console.log(data)
+        // console.log(data)
         
         // The API returns { historyRequests, pendingRequests }
         const pendingRequests = data.pendingRequests || []
@@ -36,7 +36,7 @@ export default function FinanceSidebarGroup(){
     return (
         <>
             <SidebarItem
-                href="/dashboard/analytics"
+                
                 icon={<BarChart3 size={18} />}
                 label="Analytics"
             />
